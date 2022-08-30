@@ -1,6 +1,4 @@
-2022-08-10 00:00:00,500,internship wage,base
-2022-09-10 00:00:00,500,internship wage,base
-2022-08-02 00:00:00,-250,rent,base
+2022-09-05 00:00:00,500,internship wage,base
 2022-09-02 00:00:00,-250,rent,base
 2022-10-02 00:00:00,-250,rent,base
 2022-11-02 00:00:00,-250,rent,base
@@ -10,8 +8,7 @@
 2023-03-02 00:00:00,-250,rent,base
 2023-04-02 00:00:00,-250,rent,base
 2023-05-02 00:00:00,-250,rent,base
-2022-07-26 00:00:00,350,allowance,base
-2022-08-26 00:00:00,350,allowance,base
+2022-08-29 00:00:00,350,allowance,base
 2022-09-26 00:00:00,350,allowance,base
 2022-10-26 00:00:00,350,allowance,base
 2022-11-26 00:00:00,350,allowance,base
@@ -32,9 +29,8 @@
 2023-03-02 00:00:00,170,scholarship,base
 2023-04-02 00:00:00,170,scholarship,base
 2023-05-02 00:00:00,170,scholarship,base
-2022-07-23 00:00:00,500,base money,base
-2022-08-23 00:00:00,1400,FFHCM,FFHCM
-2022-09-30 00:00:00,2000,CuttinEdge,CuttinEdge
+2022-08-27 00:00:00,200,base money,base
+2022-09-23 00:00:00,1400,FFHCM,FFHCM
 2022-10-02 00:00:00,400,Research Assistant,RA
 2022-11-02 00:00:00,400,Research Assistant,RA
 2022-12-02 00:00:00,400,Research Assistant,RA
@@ -43,82 +39,86 @@
 2023-03-02 00:00:00,400,Research Assistant,RA
 2023-04-02 00:00:00,400,Research Assistant,RA
 2023-05-02 00:00:00,400,Research Assistant,RA
-2022-07-24 00:00:00,-60,food,base
-2022-07-31 00:00:00,-60,food,base
-2022-08-07 00:00:00,-60,food,base
-2022-08-14 00:00:00,-60,food,base
-2022-08-21 00:00:00,-60,food,base
-2022-08-28 00:00:00,-60,food,base
-2022-09-04 00:00:00,-60,food,base
-2022-09-11 00:00:00,-60,food,base
-2022-09-18 00:00:00,-60,food,base
-2022-09-25 00:00:00,-60,food,base
-2022-10-02 00:00:00,-60,food,base
-2022-10-09 00:00:00,-60,food,base
-2022-10-16 00:00:00,-60,food,base
-2022-10-23 00:00:00,-60,food,base
-2022-10-30 00:00:00,-60,food,base
-2022-11-06 00:00:00,-60,food,base
-2022-11-13 00:00:00,-60,food,base
-2022-11-20 00:00:00,-60,food,base
-2022-11-27 00:00:00,-60,food,base
-2022-12-04 00:00:00,-60,food,base
-2022-12-11 00:00:00,-60,food,base
-2022-12-18 00:00:00,-60,food,base
-2022-12-25 00:00:00,-60,food,base
-2023-01-01 00:00:00,-60,food,base
-2023-01-08 00:00:00,-60,food,base
-2023-01-15 00:00:00,-60,food,base
-2023-01-22 00:00:00,-60,food,base
-2023-01-29 00:00:00,-60,food,base
-2023-02-05 00:00:00,-60,food,base
-2023-02-12 00:00:00,-60,food,base
-2023-02-19 00:00:00,-60,food,base
-2023-02-26 00:00:00,-60,food,base
-2023-03-05 00:00:00,-60,food,base
-2023-03-12 00:00:00,-60,food,base
-2023-03-19 00:00:00,-60,food,base
-2023-03-26 00:00:00,-60,food,base
-2023-04-02 00:00:00,-60,food,base
-2023-04-09 00:00:00,-60,food,base
-2023-04-16 00:00:00,-60,food,base
-2023-04-23 00:00:00,-60,food,base
-2023-04-30 00:00:00,-60,food,base
-2023-05-07 00:00:00,-60,food,base
-2023-05-14 00:00:00,-60,food,base
-2022-07-25,-40,livres,base
-2022-07-27,-150,train,hyeres
-2022-08-14,-150,sur place,hyeres
-2022-07-26,100,allowance,base
-2022-08-07,-30,salle,base
-2022-09-07,-30,salle,base
-2022-10-07,-30,salle,base
-2022-11-07,-30,salle,base
-2022-12-07,-30,salle,base
-2023-01-07,-30,salle,base
-2023-02-07,-30,salle,base
-2023-03-07,-30,salle,base
-2023-04-07,-30,salle,base
-2022-12-10,-200,christmas,base
-2023-01-01,300,christmas_,base
-2022-08-11,-30,"abonnements (apple, tds)",base
-2022-09-11,-30,"abonnements (apple, tds)",base
-2022-10-11,-30,"abonnements (apple, tds)",base
-2022-11-11,-30,"abonnements (apple, tds)",base
-2022-12-11,-30,"abonnements (apple, tds)",base
-2023-01-11,-30,"abonnements (apple, tds)",base
-2023-02-11,-30,"abonnements (apple, tds)",base
-2023-03-11,-30,"abonnements (apple, tds)",base
-2023-04-11,-30,"abonnements (apple, tds)",base
-2023-05-11,-30,"abonnements (apple, tds)",base
-2023-06-11,-30,"abonnements (apple, tds)",base
-2022-09-04,-36,Navigo,base
-2022-10-04,-36,Navigo,base
-2022-11-04,-36,Navigo,base
-2022-12-04,-36,Navigo,base
-2023-01-04,-36,Navigo,base
-2023-02-04,-36,Navigo,base
-2023-03-04,-36,Navigo,base
-2023-04-04,-36,Navigo,base
-2023-05-04,-36,Navigo,base
-2023-06-04,-36,Navigo,base
+2022-08-29 00:00:00,-60,food,base
+2022-09-03 00:00:00,-60,food,base
+2022-09-10 00:00:00,-60,food,base
+2022-09-17 00:00:00,-60,food,base
+2022-09-24 00:00:00,-60,food,base
+2022-10-01 00:00:00,-60,food,base
+2022-10-08 00:00:00,-60,food,base
+2022-10-15 00:00:00,-60,food,base
+2022-10-22 00:00:00,-60,food,base
+2022-10-29 00:00:00,-60,food,base
+2022-11-05 00:00:00,-60,food,base
+2022-11-12 00:00:00,-60,food,base
+2022-11-19 00:00:00,-60,food,base
+2022-11-26 00:00:00,-60,food,base
+2022-12-03 00:00:00,-60,food,base
+2022-12-10 00:00:00,-60,food,base
+2022-12-17 00:00:00,-60,food,base
+2022-12-24 00:00:00,-60,food,base
+2022-12-31 00:00:00,-60,food,base
+2023-01-07 00:00:00,-60,food,base
+2023-01-14 00:00:00,-60,food,base
+2023-01-21 00:00:00,-60,food,base
+2023-01-28 00:00:00,-60,food,base
+2023-02-04 00:00:00,-60,food,base
+2023-02-11 00:00:00,-60,food,base
+2023-02-18 00:00:00,-60,food,base
+2023-02-25 00:00:00,-60,food,base
+2023-03-04 00:00:00,-60,food,base
+2023-03-11 00:00:00,-60,food,base
+2023-03-18 00:00:00,-60,food,base
+2023-03-25 00:00:00,-60,food,base
+2023-04-01 00:00:00,-60,food,base
+2023-04-08 00:00:00,-60,food,base
+2023-04-15 00:00:00,-60,food,base
+2023-04-22 00:00:00,-60,food,base
+2023-04-29 00:00:00,-60,food,base
+2023-05-06 00:00:00,-60,food,base
+2023-05-13 00:00:00,-60,food,base
+2023-05-20 00:00:00,-60,food,base
+2022-10-03,83,remboursements genes,base
+
+2022-09-05,-38,imagineR,base
+2022-10-05,-38,imagineR,base
+2022-11-05,-38,imagineR,base
+2022-12-05,-38,imagineR,base
+2023-01-05,-38,imagineR,base
+2023-02-05,-38,imagineR,base
+2023-03-05,-38,imagineR,base
+2023-04-05,-38,imagineR,base
+2023-05-05,-38,imagineR,base
+2023-06-05,-38,imagineR,base
+2023-07-05,-38,imagineR,base
+2023-08-05,-38,imagineR,base
+2022-09-05,-50,imagineR,base
+2022-10-10,-500,Amende,base
+2023-01-02,3000,panicoupe,panicoupe
+2022-09-12,-120,WEI,WEI
+2022-09-12,-20,fiesta20w,fiesta20w
+2022-09-19,-20,fiesta20w,fiesta20w
+2022-09-26,-20,fiesta20w,fiesta20w
+2022-10-03,-20,fiesta20w,fiesta20w
+2022-10-10,-20,fiesta20w,fiesta20w
+2022-10-17,-20,fiesta20w,fiesta20w
+2022-10-24,-20,fiesta20w,fiesta20w
+2022-10-31,-20,fiesta20w,fiesta20w
+2022-11-07,-20,fiesta20w,fiesta20w
+2022-11-14,-20,fiesta20w,fiesta20w
+2022-11-21,-20,fiesta20w,fiesta20w
+2022-11-28,-20,fiesta20w,fiesta20w
+2022-12-05,-20,fiesta20w,fiesta20w
+2022-12-12,-20,fiesta20w,fiesta20w
+2022-12-19,-20,fiesta20w,fiesta20w
+2022-12-26,-20,fiesta20w,fiesta20w
+2023-01-02,-20,fiesta20w,fiesta20w
+2023-01-09,-20,fiesta20w,fiesta20w
+2023-01-16,-20,fiesta20w,fiesta20w
+2023-01-23,-20,fiesta20w,fiesta20w
+2023-01-30,-20,fiesta20w,fiesta20w
+2023-02-06,-20,fiesta20w,fiesta20w
+2023-02-13,-20,fiesta20w,fiesta20w
+2023-02-20,-20,fiesta20w,fiesta20w
+2023-02-27,-20,fiesta20w,fiesta20w
+2023-03-06,-20,fiesta20w,fiesta20w

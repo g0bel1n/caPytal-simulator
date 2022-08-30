@@ -18,31 +18,34 @@ selected_conditionnals = []
 final_date = "2022-12-31"
 initial_savings = 282
 saving_threshold = 400
-
+compact_frequency = {"Ponctuel": "p", "Hebdomadaire": "w", "Mensuel": "m"}
 
 st.title("Ca[py]tal simulator")
 
-st.subheader("Money in Bank")
+st.subheader("Vue sur les comptes")
 with st.sidebar:
-    with st.expander("Add Data"):
+    with st.expander("Ajouter des mouvements"):
         start = st.date_input(
-            "Start of period", value=datetime.now(), min_value=datetime.now()
+            "Début de la période", value=datetime.now(), min_value=datetime.now()
         )
-        frequency = st.selectbox("Frequency", options=("p", "w", "m"))
+        frequency = st.selectbox(
+            "Fréquence", options=("Ponctuel", "Hebdomadaire", "Mensuel")
+        )
+        frequency = compact_frequency[frequency]
         if frequency in ("m", "w"):
             end = st.date_input(
-                "End of period",
+                "Fin de la période",
                 value=datetime.now() + timedelta(weeks=1),
                 min_value=datetime.now() + timedelta(weeks=1),
             )
 
         else:
             end = None
-        amount = int(st.text_input("Amount", value="0"))
+        amount = int(st.text_input("Montant", value="0"))
         label = st.text_input("Label")
-        conditionnal = st.text_input("Conditionnal ? ", value="base")
+        conditionnal = st.text_input("Hypothèse", value="base")
         button = st.button(
-            "Add",
+            "Ajouter",
             on_click=init_write,
             kwargs=dict(
                 amount=amount,
@@ -54,14 +57,19 @@ with st.sidebar:
             ),
         )
 
-    with st.expander("Select situation"):
-        selected_conditionnals = st.multiselect("Situations", conditionnals)
-    with st.expander("Savings"):
-        initial_savings = st.number_input("Initial savings", value=initial_savings)
-        saving_threshold = st.number_input("Saving Threshold", value=saving_threshold)
+    with st.expander("Selectionner des hypothèses"):
+        selected_conditionnals = st.multiselect("Hypothèses", conditionnals)
+    with st.expander("Epargne"):
+        initial_savings = st.number_input("Epargne initiale", value=initial_savings)
+        saving_threshold = st.number_input(
+            "Montant minimal dans le compte courant", value=saving_threshold
+        )
+
+
+
 
 final_date = st.date_input(
-    "Simulate until ?",
+    "Simuler jusqu'à ...",
     min_value=datetime.now(),
     value=datetime.strptime("2022-12-31", "%Y-%m-%d"),
 )
@@ -83,22 +91,22 @@ if button:
     df = df[df.label != "No movement"]
 
 st.plotly_chart(
-    px.line(df, y=["bank_account", "savings"], hover_data=["label", "movement"])
+    px.line(df, y=["Compte courant", "Epargne"], hover_data=["label", "Mouvement"])
 )
 
 col1, col2, col3 = st.columns(3)
 with col1:
     st.metric(
-        "Minimum active money in bank",
-        df.loc[:, "bank_account"].min(),
+        "Minimum dans le compte courant",
+        df.loc[:, "Compte courant"].min(),
         delta=None,
         delta_color="normal",
         help=None,
     )
 with col2:
     st.metric(
-        "Minimum total money in bank",
-        df.loc[:, ["bank_account", "savings"]].sum(axis=1).min(),
+        "Minimum de capital total",
+        df.loc[:, ["Compte courant", "Epargne"]].sum(axis=1).min(),
         delta=None,
         delta_color="normal",
         help=None,
@@ -106,23 +114,24 @@ with col2:
 
 with col3:
     st.metric(
-        "Average active money in bank",
-        int(df.loc[:, "bank_account"].mean()),
+        "Montant moyen dans le compte courant",
+        int(df.loc[:, "Compte courant"].mean()),
         delta=None,
         delta_color="normal",
         help=None,
     )
 
 
-st.subheader("Expenses")
-grouped_df = df.groupby(by="label").sum()
+st.subheader("Dépenses")
+df1 = df[df.label !='No Mouvement']
+grouped_df = df1.groupby(by="label").sum()
 st.plotly_chart(
     px.pie(
         values=grouped_df[grouped_df.movement < 0].movement.abs(),
         names=grouped_df[grouped_df.movement < 0].index,
     )
 )
-st.subheader("Gains")
+st.subheader("Rentrées")
 st.plotly_chart(
     px.pie(
         values=grouped_df[grouped_df.movement > 0].movement.abs(),
@@ -130,5 +139,5 @@ st.plotly_chart(
     )
 )
 
-with st.expander("show df"):
+with st.expander("Montrer le dataframe"):
     df

@@ -23,26 +23,26 @@ def savings_bot(df: pd.DataFrame, threshold: int = 400, initial_savings: int = 0
     :type initial_savings: int (optional)
     :return: A dataframe with a new column called "savings"
     """
-    df["savings"] = initial_savings
+    df["Epargne"] = initial_savings
     for time_stamp in df.index.unique():
-        delta_save = df.loc[time_stamp:, "bank_account"].min() - threshold
+        delta_save = df.loc[time_stamp:, "Compte courant"].min() - threshold
         if delta_save > 0:
-            df.loc[time_stamp:, "bank_account"] -= delta_save
-            df.loc[time_stamp:, "savings"] += delta_save
+            df.loc[time_stamp:, "Compte courant"] -= delta_save
+            df.loc[time_stamp:, "Epargne"] += delta_save
 
     return df
 
 
 def label_cleaner(new_col_name, row):
     """
-    If the new column is null, then the label is "No movement". Otherwise, the label is whatever it was
+    If the new column is null, then the label is "No Mouvement". Otherwise, the label is whatever it was
     before
 
     :param new_col_name: the name of the column that will be created
     :param row: the row of the dataframe that we're currently iterating over
     :return: A dataframe with the new column added.
     """
-    row["label"] = "No movement" if pd.isna(row[new_col_name]) else row["label"]
+    row["label"] = "No Mouvement" if pd.isna(row[new_col_name]) else row["label"]
     return row
 
 
@@ -83,7 +83,7 @@ class MoneyFlow:
                 logs.append([self.start, self.amount, self.label, self.conditionnal])
                 self.start += recurrent_step
 
-        with open("logs/logs.csv", "a+", newline="") as f:
+        with open("logs/logs.csv", "a+", newline="\n") as f:
             csv_writer = writer(f)
             csv_writer.writerows(logs)
 
@@ -106,22 +106,22 @@ def Accountant(
     end = datetime.strptime(end, "%Y-%m-%d") if end is str else end
 
     df = pd.read_csv("logs/logs.csv", header=None)
-    df.columns = ["timestamp", "movement", "label", "conditionnal"]
+    df.columns = ["timestamp", "Mouvement", "label", "conditionnal"]
     df.timestamp = pd.to_datetime(df.timestamp)
-    df.loc[:, "movement"] = df.loc[:, "movement"].astype(int)
+    df.loc[:, "movement"] = df.loc[:, "Mouvement"].astype(int)
     df.sort_values(by="timestamp", inplace=True)
     df.drop_duplicates(inplace=True)
 
-    df["cumsum"] = df.movement.cumsum()
+    df["cumsum"] = df.Mouvement.cumsum()
 
     cond = df.conditionnal == "base"
     cond_name = ["base"]
     for conditionnal in hypothesises:
         cond = cond | (df.conditionnal == conditionnal)
         cond_name.append(conditionnal)
-    new_col_name = "bank_account"
+    new_col_name = "Compte courant"
     df[new_col_name] = np.NaN
-    new_col = df[cond].movement.cumsum()
+    new_col = df[cond].Mouvement.cumsum()
     df.loc[new_col.index, new_col_name] = new_col
     df.loc[:, "label"] = df.apply(partial(label_cleaner, new_col_name), axis=1)
     df[new_col_name].fillna(method="ffill", inplace=True)
@@ -146,21 +146,14 @@ if __name__ == "__main__":
         -250, start="2022-08-02", end="2023-05-20", frequency="m", label="rent"
     ).write()
     MoneyFlow(
-        350, start="2022-07-26", end="2023-09-20", frequency="m", label="allowance"
+        350, start="2022-08-26", end="2023-09-20", frequency="m", label="allowance"
     ).write()
     MoneyFlow(
         170, start="2022-10-02", end="2023-05-20", frequency="m", label="scholarship"
     ).write()
-    MoneyFlow(500, start="2022-07-23", frequency="p", label="base money").write()
+    MoneyFlow(200, start="2022-08-27", frequency="p", label="base money").write()
     MoneyFlow(
-        1400, start="2022-08-23", frequency="p", label="FFHCM", conditionnal="FFHCM"
-    ).write()
-    MoneyFlow(
-        2000,
-        start="2022-09-30",
-        frequency="p",
-        label="CuttinEdge",
-        conditionnal="CuttinEdge",
+        1400, start="2022-09-23", frequency="p", label="FFHCM", conditionnal="FFHCM"
     ).write()
     MoneyFlow(
         400,
@@ -171,7 +164,7 @@ if __name__ == "__main__":
         conditionnal="RA",
     ).write()
     MoneyFlow(
-        -60, start="2022-07-24", end="2023-05-20", frequency="w", label="food"
+        -60, start="2022-08-27", end="2023-05-20", frequency="w", label="food"
     ).write()
 
     Accountant(end="2022-09-20", hypothesises=["FFHCM", "CuttinEdge", "RA"])
